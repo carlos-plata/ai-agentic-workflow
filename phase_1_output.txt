@@ -67,3 +67,45 @@ The podcast that Clara hosts is called "Crosscurrents." This show explores the i
 
 Best regards,
 [Your Name]
+
+
+###### routing_agent.py output ######
+mckay@DESKTOP-C7CQB65:~/dev/udacity/ai-agentic-workflow/starter/phase_1$ python3 routing_agent.py
+
+============================================================
+Prompt: Tell me about the history of Rome, Texas
+============================================================
+Agent: texas agent, Similarity: 0.386
+Agent: europe agent, Similarity: 0.165
+Agent: math agent, Similarity: 0.003
+[Router] Best agent: texas agent (score=0.386)
+Response: Rome, Texas is a small unincorporated community located in Fannin County. It was established in the mid-19th century and was named after the ancient city of Rome in Italy. The community was originally settled by pioneers and farmers attracted to the fertile land in the area. Rome, Texas has a rich history tied to agriculture and ranching, with many early residents working in these industries. Today, Rome remains a small rural community with a close-knit population.
+
+============================================================
+Prompt: Tell me about the history of Rome, Italy
+============================================================
+Agent: texas agent, Similarity: 0.144
+Agent: europe agent, Similarity: 0.288
+Agent: math agent, Similarity: 0.032
+[Router] Best agent: europe agent (score=0.288)
+Response: Rome, Italy, has a rich and extensive history that dates back over 2,800 years. It was founded in the 8th century BC and grew to become the capital of the Roman Kingdom, Roman Republic, and Roman Empire. Rome was a major center of power, culture, and civilization in ancient times, known for its advancements in architecture, engineering, art, literature, and law.
+
+The Roman Republic was established in 509 BC, following the overthrow of the Roman Kingdom. During this period, Rome expanded its territory through conquest and colonization, eventually controlling the entire Italian peninsula and parts of Europe, North Africa, and the Middle East.
+
+In 27 BC, the Roman Republic transitioned into the Roman Empire with the rise of Augustus Caesar as the first Roman Emperor. The Roman Empire reached its peak in the 2nd century AD, under emperors like Trajan and Hadrian, controlling a vast territory and influencing cultures across Europe and beyond.
+
+However, the Roman Empire faced internal strife, economic challenges, and external invasions, leading to its decline. In 476 AD, the Western Roman Empire fell when the Germanic chieftain Odoacer deposed the last Roman emperor, Romulus Augustulus.
+
+Despite the fall of the Western Roman Empire, the city of Rome remained a significant cultural and religious center. It became the capital of the Papal States in the Middle Ages and later the capital of the Kingdom of Italy in the 19th century.
+
+Today, Rome is known for its historical landmarks, such as the Colosseum, Roman Forum, Pantheon, and Vatican City. It is a UNESCO World Heritage Site and a popular tourist destination, attracting millions of visitors each year to experience its ancient ruins, art, and architecture.
+
+============================================================
+Prompt: One story takes 2 days, and there are 20 stories
+============================================================
+Agent: texas agent, Similarity: 0.059
+Agent: europe agent, Similarity: 0.083
+Agent: math agent, Similarity: 0.130
+[Router] Best agent: math agent (score=0.130)
+Response: It will take 40 days to complete all 20 stories.
+mckay@DESKTOP-C7CQB65:~/dev/udacity/ai-agentic-workflow/starter/phase_1$
