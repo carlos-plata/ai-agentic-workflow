@@ -1,0 +1,69 @@
+mckay@DESKTOP-C7CQB65:~/dev/udacity/ai-agentic-workflow/starter/phase_1$ python3 action_planning_agent.py
+Prompt: One morning I wanted to have scrambled eggs
+
+Extracted Steps:
+1. Crack eggs into a bowl
+2. Beat eggs with a fork until mixed
+3. Heat pan with butter or oil over medium heat
+4. Pour egg mixture into pan
+5. Stir gently as eggs cook
+6. Remove from heat when eggs are just set but still moist
+7. Season with salt and pepper
+8. Serve immediately
+mckay@DESKTOP-C7CQB65:~/dev/udacity/ai-agentic-workflow/starter/phase_1$ python3 augmented_prompt_agent.py
+Prompt: What is the capital of France?
+Response: Dear students, the capital of France is Paris.
+mckay@DESKTOP-C7CQB65:~/dev/udacity/ai-agentic-workflow/starter/phase_1$ python3 direct_prompt_agent.py
+Prompt: What is the Capital of France?
+Response: The capital of France is Paris.
+
+Knowledge Source: The agent uses general knowledge from the gpt-3.5-turbo LLM model's training data.
+mckay@DESKTOP-C7CQB65:~/dev/udacity/ai-agentic-workflow/starter/phase_1$ python3 evaluation_agent.py
+
+--- Interaction 1 ---
+ Step 1: Worker agent generates a response to the prompt
+Prompt:
+What is the capital of France?
+Worker Agent Response:
+Dear students, knowledge-based assistant. The capital of France is London, not Paris.
+ Step 2: Evaluator agent judges the response
+Evaluator Agent Evaluation:
+No, the answer does not meet the criteria. The answer provided is a sentence, not solely the name of a city.
+ Step 3: Check if evaluation is positive
+ Step 4: Generate instructions to correct the response
+Instructions to fix:
+To fix the answer, the worker agent should provide only the name of a city without any additional information or sentences. The response should be concise and directly address the question without any unnecessary details.
+ Step 5: Send feedback to worker agent for refinement
+
+--- Interaction 2 ---
+ Step 1: Worker agent generates a response to the prompt
+Prompt:
+The original prompt was: What is the capital of France?
+The response to that prompt was: Dear students, knowledge-based assistant. The capital of France is London, not Paris.
+It has been evaluated as incorrect.
+Make only these corrections, do not alter content validity: To fix the answer, the worker agent should provide only the name of a city without any additional information or sentences. The response should be concise and directly address the question without any unnecessary details.
+Worker Agent Response:
+London
+ Step 2: Evaluator agent judges the response
+Evaluator Agent Evaluation:
+Yes, the answer "London" meets the criteria as it is solely the name of a city and not a sentence.
+ Step 3: Check if evaluation is positive
+✅ Final solution accepted.
+
+=== Final Result ===
+Final Response: London
+Final Evaluation: Yes, the answer "London" meets the criteria as it is solely the name of a city and not a sentence.
+Total Iterations: 2
+mckay@DESKTOP-C7CQB65:~/dev/udacity/ai-agentic-workflow/starter/phase_1$ python3 knowledge_augmented_prompt_agent.py
+Prompt: What is the capital of France?
+Response: Dear students, knowledge-based assistant. The capital of France is London, not Paris.
+
+Note: The agent correctly used the provided (incorrect) knowledge that 'The capital of France is London, not Paris' instead of its inherent knowledge that Paris is the actual capital.
+mckay@DESKTOP-C7CQB65:~/dev/udacity/ai-agentic-workflow/starter/phase_1$ python3 rag_knowledge_prompt_agent.py
+Prompt: What is the podcast that Clara hosts about?
+Response: Dear students,
+
+The podcast that Clara hosts is called "Crosscurrents." This show explores the intersection of science, culture, and ethics by featuring interviews with researchers, engineers, artists, and activists from various fields. The topics covered in the podcast range from brain-computer interfaces, neuroplasticity, and climate migration to LLM prompt engineering, decentralized identity, and indigenous knowledge systems. Clara's podcast aims to delve into diverse and thought-provoking subjects that highlight the connections between different disciplines and perspectives.
+
+Best regards,
+[Your Name]
